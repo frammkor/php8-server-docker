@@ -12,13 +12,14 @@ services:
       - MYSQL_USER=php_docker
       - MYSQL_PASSWORD=password
       - MYSQL_ALLOW_EMPTY_PASSWORD=1 # equivalent to True
-
       # - MYSQL_ROOT_PASSWORD=secret
       # - MYSQL_TCP_PORT=3306 # default port for mySql
     volumes:
       # - db-data:/var/lib/mysql
       - "./db:/docker-entrypoint-initdb.d" # this is how we persist a sql db even when container stops
     restart: always
+    networks:
+      - default
 
   db-client:
     image: phpmyadmin/phpmyadmin
@@ -30,6 +31,8 @@ services:
       - PMA_PORT=3306
     depends_on:
       - database
+    networks:
+      - default
 
   server:
     container_name: apache-server
@@ -43,6 +46,8 @@ services:
       - 443:443 # for future ssl traffic
     depends_on:
       - database
+    networks:
+      - default
   # server:
   #   build:
   #     context: .
@@ -58,3 +63,7 @@ services:
   #     - 443:443 # for ssl trafic
   #   depends_on:
   #     - database
+
+networks:
+  default:
+    driver: bridge
