@@ -33,7 +33,11 @@ The propose of this repo is to practice and set the bases for the next versions 
 
 ### TODOS
 
-- [ ] Connect this database container with existing local db storage
+- [x] Connect this database container with existing local db storage
+- [ ] Properly set the root user and its password
+- [ ] Move this information to [Docker secrets](https://docs.docker.com/compose/use-secrets/)
+- [ ] Properly set the HM user and its password
+
 
 ## Sources
 
@@ -45,5 +49,7 @@ The propose of this repo is to practice and set the bases for the next versions 
 
 ### To watch
 
-[How to run your PHP app in docker with MySql](https://www.youtube.com/watch?v=ZFCR1nERKBk)
-[How to Fix and Debug Docker Containers Like a Superhero](https://www.docker.com/blog/how-to-fix-and-debug-docker-containers-like-a-superhero/)
+- [ ] [How to run your PHP app in docker with MySql](https://www.youtube.com/watch?v=ZFCR1nERKBk)
+- [ ] [How to Fix and Debug Docker Containers Like a Superhero](https://www.docker.com/blog/how-to-fix-and-debug-docker-containers-like-a-superhero/)
+
+- [ ] [Best practices for building a production-ready Dockerfile for PHP applications](https://snyk.io/blog/building-production-ready-dockerfile-php/)

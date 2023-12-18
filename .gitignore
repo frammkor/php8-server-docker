@@ -1,3 +1,10 @@
+/db/*
+!/db/02-functions.sql
+/secrets/*
+.env
+
+# \\ AFTER THIS IS JUST A TEMPLATE FOR A GITIGNORE FOR SYMFONY
+
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*

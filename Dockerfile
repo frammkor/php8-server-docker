@@ -8,7 +8,7 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 # Install php extensions
 # exit on errors, exit on unset variables, print every command as it is executed
 RUN set -eux; \
-    install-php-extensions mysqli pdo pdo_mysql zip;
+    install-php-extensions mysqli pdo pdo_mysql zip intl;
 
 # RUN docker-php-ext-install pdo pdo_mysql
 
