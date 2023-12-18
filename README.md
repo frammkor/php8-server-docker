@@ -37,4 +37,13 @@ The propose of this repo is to practice and set the bases for the next versions 
 
 ## Sources
 
-(Build a Full Stack Web App in PHP and MySQL with Docker from scratch!)[https://www.youtube.com/watch?v=2Bxh5FNGznQ]
+[Build a Full Stack Web App in PHP and MySQL with Docker from scratch!](https://www.youtube.com/watch?v=2Bxh5FNGznQ)
+[Docker and PHP Full Course](https://www.youtube.com/playlist?list=PLQH1-k79HB396mS8xRQ5gih5iqkQw-4aV)
+[Docker and PHP Full Course REPO](https://github.com/GaryClarke/docker-php/tree/develop)
+
+[ENV EXAMPLE: Laravel Docker Course | Complete Laravel Dockerization](https://www.youtube.com/watch?v=WahJ91Nrgn0)
+
+### To watch
+
+[How to run your PHP app in docker with MySql](https://www.youtube.com/watch?v=ZFCR1nERKBk)
+[How to Fix and Debug Docker Containers Like a Superhero](https://www.docker.com/blog/how-to-fix-and-debug-docker-containers-like-a-superhero/)
