@@ -1,0 +1,60 @@
+version: '3.8'
+
+volumes:
+  db-data:
+
+services:
+  database:
+    image: mysql:5.7.44
+    container_name: mysql
+    environment:
+      - MYSQL_DATABASE=php_docker
+      - MYSQL_USER=php_docker
+      - MYSQL_PASSWORD=password # this should live in a env var
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1 # equivalent to True
+
+      # - MYSQL_ROOT_PASSWORD=secret
+      # - MYSQL_TCP_PORT=3306 # default port for mySql
+    volumes:
+      - db-data:/var/lib/mysql
+      # - /Applications/MAMP/db/mysql57:/var/lib/mysql # The service mounts this volume at the specific path inside the container
+    restart: always
+
+  db-client:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - 8001:80
+    environment:
+      - PMA_HOST=database # value is the database service key
+      - PMA_PORT=3306
+    depends_on:
+      - database
+
+  server:
+    container_name: apache-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "./:/var/www/html" # sync the current dir on local machine to the dir of container
+    ports:
+      - 80:80
+      - 443:443 # for future ssl traffic
+    depends_on:
+      - database
+  # server:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - MYSQL_DBHOST=database
+  #     - MYSQL_DBPORT=3306
+  #     - MYSQL_DBUSER=root
+  #     - MYSQL_DBPASS=secret
+  #     #- MYSQL_DBNAME=
+  #   ports:
+  #     - 8080:80
+  #     - 443:443 # for ssl trafic
+  #   depends_on:
+  #     - database

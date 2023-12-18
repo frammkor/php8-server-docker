@@ -1,0 +1,60 @@
+# Use the official Alpine Linux as a base image with Linux Kernel 5.4
+FROM alpine:latest
+
+# Install required dependencies
+RUN apk update && apk upgrade && \
+    apk add --no-cache \
+        linux-vanilla \
+        apache2 \
+        apache2-utils \
+        php8 \
+        php8-apache2 \
+        php8-cli \
+        php8-json \
+        php8-phar \
+        php8-mysqli \
+        composer \
+        nodejs \
+        npm \
+        phpmyadmin
+
+# Configure Apache
+RUN sed -i 's#^DocumentRoot ".*#DocumentRoot "/var/www/localhost/htdocs"#' /etc/apache2/httpd.conf && \
+    sed -i 's#AllowOverride none#AllowOverride All#' /etc/apache2/httpd.conf && \
+    sed -i 's#^ServerRoot ".*#ServerRoot "/etc/apache2"#' /etc/apache2/httpd.conf
+
+# Set PHP and Apache environment variables
+ENV PHP_INI_DIR=/etc/php8 \
+    APACHE_DOCUMENT_ROOT=/var/www/localhost/htdocs
+
+# Configure PHP
+RUN mkdir -p $PHP_INI_DIR/conf.d && \
+    echo "date.timezone = UTC" > $PHP_INI_DIR/conf.d/custom.ini
+
+# Enable Apache modules
+RUN sed -i 's#^#LoadModule rewrite_module modules/mod_rewrite.so#' /etc/apache2/httpd.conf && \
+    sed -i 's#^#LoadModule php8_module modules/libphp8.so#' /etc/apache2/httpd.conf
+
+# Create the necessary directories
+RUN mkdir -p /run/apache2 /var/www/localhost/htdocs
+
+# Expose port 80
+EXPOSE 80
+
+# Set the working directory
+WORKDIR /var/www/localhost/htdocs
+
+# Copy your application code to the container
+COPY . /var/www/localhost/htdocs
+
+# Install Composer dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+# Install Node.js dependencies
+RUN npm install
+
+# Configure phpMyAdmin
+RUN sed -i 's#$cfg\[\textquote{Servers}\]\[\textquote{1}\]\[\textquote{auth\_type}\] = \textquote{cookie};#$cfg\[\textquote{Servers}\]\[\textquote{1}\]\[\textquote{auth\_type}\] = \textquote{http};#' /etc/phpmyadmin/config.inc.php
+
+# Start Apache in the foreground
+CMD ["httpd", "-D", "FOREGROUND"]
