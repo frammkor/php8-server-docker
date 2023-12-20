@@ -55,3 +55,10 @@ The propose of this repo is to practice and set the bases for the next versions 
 - [ ] [How to Fix and Debug Docker Containers Like a Superhero](https://www.docker.com/blog/how-to-fix-and-debug-docker-containers-like-a-superhero/)
 
 - [ ] [Best practices for building a production-ready Dockerfile for PHP applications](https://snyk.io/blog/building-production-ready-dockerfile-php/)
+
+## Usage
+
+From the root directory run 'docker-composer up' to start all the services
+
+To access a terminal on any service's container run `docker-compose exec <service-name> /bin/bash`
+In the case of the server run `docker-compose exec server /bin/bash`
