@@ -1,6 +1,6 @@
-# HM with Docker
+# PHP-Server with Docker
 
-The propose of this repo is to practice and set the bases for the next versions of HM that will include:
+The propose of this repo is to practice and set the bases for the next versions of PHP-Server that will include:
 
 1. Migration of project to PHP 8 and Laminas Framework
 2. Improve automation and deployment in various environments
@@ -25,6 +25,8 @@ The propose of this repo is to practice and set the bases for the next versions 
 - [ ] PHPStan
 - [ ] Husky
 - [ ] Linter
+- [ ] Webpack
+- [ ] Vue3
 
 ### Other changes
 
@@ -36,7 +38,7 @@ The propose of this repo is to practice and set the bases for the next versions 
 - [x] Connect this database container with existing local db storage
 - [ ] Properly set the root user and its password
 - [ ] Move this information to [Docker secrets](https://docs.docker.com/compose/use-secrets/)
-- [ ] Properly set the HM user and its password
+- [ ] Properly set the db user and its password to access from the phpmyadmin
 
 
 ## Sources

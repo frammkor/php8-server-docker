@@ -4,7 +4,7 @@ $connect = mysqli_connect(
     'database', # service name
     'php_docker', # username
     'password', # password
-    getenv('DB_DATABASE'), # db table NOT WORKING
+    'db428100562', # db table NOT WORKING
 );
 
 $table_name = "NOTIFICATION";
