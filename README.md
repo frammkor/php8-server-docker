@@ -20,9 +20,10 @@ The propose of this repo is to practice and set the bases for the next versions 
 
 ### Tools
 
-- [ ] Laminas Project
-- [ ] Docker
+- [X] Laminas Project
+- [X] Docker
 - [ ] PHPStan
+- [ ] Rector
 - [ ] Husky
 - [ ] Linter
 - [ ] Webpack
@@ -46,6 +47,7 @@ The propose of this repo is to practice and set the bases for the next versions 
 [Build a Full Stack Web App in PHP and MySQL with Docker from scratch!](https://www.youtube.com/watch?v=2Bxh5FNGznQ)
 [Docker and PHP Full Course](https://www.youtube.com/playlist?list=PLQH1-k79HB396mS8xRQ5gih5iqkQw-4aV)
 [Docker and PHP Full Course REPO](https://github.com/GaryClarke/docker-php/tree/develop)
+[PHP web development environment with Docker tutorial - 001](https://www.youtube.com/playlist?list=PLQH1-k79HB396mS8xRQ5gih5iqkQw-4aV)
 
 [ENV EXAMPLE: Laravel Docker Course | Complete Laravel Dockerization](https://www.youtube.com/watch?v=WahJ91Nrgn0)
 
@@ -58,7 +60,7 @@ The propose of this repo is to practice and set the bases for the next versions 
 
 ## Usage
 
-From the root directory run 'docker-composer up' to start all the services
+From the root directory run 'docker-composer up -d' to start all the services
 
 To access a terminal on any service's container run `docker-compose exec <service-name> /bin/bash`
 In the case of the server run `docker-compose exec server /bin/bash`
