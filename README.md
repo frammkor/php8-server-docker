@@ -44,12 +44,29 @@ The propose of this repo is to practice and set the bases for the next versions 
 
 ## Sources
 
+### Docker
 [Build a Full Stack Web App in PHP and MySQL with Docker from scratch!](https://www.youtube.com/watch?v=2Bxh5FNGznQ)
 [Docker and PHP Full Course](https://www.youtube.com/playlist?list=PLQH1-k79HB396mS8xRQ5gih5iqkQw-4aV)
 [Docker and PHP Full Course REPO](https://github.com/GaryClarke/docker-php/tree/develop)
 [PHP web development environment with Docker tutorial - 001](https://www.youtube.com/playlist?list=PLQH1-k79HB396mS8xRQ5gih5iqkQw-4aV)
 
 [ENV EXAMPLE: Laravel Docker Course | Complete Laravel Dockerization](https://www.youtube.com/watch?v=WahJ91Nrgn0)
+
+### Laminas
+
+
+[Getting Started with Laminas A skeleton application](https://docs.laminas.dev/tutorials/getting-started/skeleton-application/)
+
+Can be useful to understand all the elements components and services that are used in Laminas when creating entities: [starterKit](http://laminasstarterkit.omelak.com/)
+
+[Laminas project structure](https://www.youtube.com/watch?v=pYGmcV5xdtw&ab_channel=ComparedProgramming)
+[Laminas Tutorial Espanol](https://www.youtube.com/watch?v=_GzTgVuJuG0)
+[Getting started with Laminas MVC PHP 8 and Doctrine ORM Album Module](https://www.youtube.com/watch?v=POKBupriaPE&t=902s&ab_channel=OsiesiefoTechnologies)
+
+
+### PHPStan and other tools
+[Measure PHP Code Quality With Static Analysis Using PHPStan](https://www.youtube.com/watch?v=OiS2xGVWEa0)
+[adamculp/php-code-quality](https://hub.docker.com/r/adamculp/php-code-quality)
 
 ### To watch
 
